@@ -1,0 +1,17 @@
+[Unit]
+Description=PrintBot - печать файлов из Telegram
+After=network-online.target cups.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=printbot
+Group=printbot
+WorkingDirectory=/opt/printbot
+Environment=HOME=/opt/printbot
+ExecStart=/opt/printbot/venv/bin/python /opt/printbot/bot.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

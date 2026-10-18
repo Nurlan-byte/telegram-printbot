@@ -1,0 +1,2 @@
+# Переключать HP M1132 из режима «Smart Install» в режим принтера при каждом подключении
+ATTR{idVendor}=="03f0", ATTR{idProduct}=="042a", RUN+="usb_modeswitch '/%k'"
